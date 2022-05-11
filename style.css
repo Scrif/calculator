@@ -43,5 +43,12 @@
 }
 
 .button-container .button {
-    
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    font-weight: 500;
+    background-color:#f6f6f6;
+    border: 0px solid transparent;
+    border-radius: 100%;
+    box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
