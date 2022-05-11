@@ -1,5 +1,26 @@
 :root {
-    --background: #f6f6f6;
+    --gray: #f6f6f6;
+    --green: #0E8422;
+    --white: #ffffff;
+    --gold: #FFD700;
+}
+
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: var(--green);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5rem auto;
+    margin-bottom: 2rem;
+    max-width: 300px;
+    width: 100%;
 }
 
 .calculator {
@@ -10,7 +31,7 @@
 }
 
 .calculator .screen-container {
-    background-color: var(--background);
+    background-color: var(--gold);
     padding: 1rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
@@ -19,7 +40,7 @@
 .screen-container .screen {
     width: 100%;
     border: 0px;
-    background-color: var(--background);
+    background-color: var(--gray);
     border-radius: .7rem;
     padding: .6rem;
     box-shadow: inset 2px 3px 5px 0px rgba(0,0,0,0.5);
@@ -37,7 +58,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0.5rem;
     padding: 1rem;
-    background-color: var(--background);
+    background-color: var(--gold);
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
 }
@@ -51,4 +72,23 @@
     border-radius: 100%;
     box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.5);
     cursor: pointer;
+}
+
+.screen output {
+    display: block;
+    background: transparent;
+    width: 100%;
+}
+
+output#user-input {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: right;
+
+}
+
+output#result {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: right;
 }
