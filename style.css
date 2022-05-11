@@ -1,5 +1,5 @@
 :root {
-    --gray: #f6f6f6;
+    --lightgray: #f6f6f6;
     --green: #0E8422;
     --white: #ffffff;
     --gold: #FFD700;
@@ -40,7 +40,7 @@ main {
 .screen-container .screen {
     width: 100%;
     border: 0px;
-    background-color: var(--gray);
+    background-color: var(--lightgray);
     border-radius: .7rem;
     padding: .6rem;
     box-shadow: inset 2px 3px 5px 0px rgba(0,0,0,0.5);
@@ -63,11 +63,11 @@ main {
     border-bottom-left-radius: 1rem;
 }
 
-.button-container .button {
+.button-container button {
     font-size: 1.3rem;
     padding: 1rem 0;
     font-weight: 500;
-    background-color:#f6f6f6;
+    background:#9fa1067c;
     border: 0px solid transparent;
     border-radius: 100%;
     box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.5);
