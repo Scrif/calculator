@@ -1,0 +1,18 @@
+:root {
+    --background: #f6f6f6;
+}
+
+.calculator {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
+}
+
+.calculator .screen-container {
+    background-color: var(--background);
+    padding: 1rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
