@@ -31,3 +31,17 @@
     background: transparent;
     width: 100%;
 }
+
+.calculator .button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--background);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.button-container .button {
+    
+}
