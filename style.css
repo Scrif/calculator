@@ -16,3 +16,18 @@
     border-top-left-radius: 1rem;
 }
 
+.screen-container .screen {
+    width: 100%;
+    border: 0px;
+    background-color: var(--background);
+    border-radius: .7rem;
+    padding: .6rem;
+    box-shadow: inset 2px 3px 5px 0px rgba(0,0,0,0.5);
+    outline: none;
+}
+
+.screen {
+    display: block;
+    background: transparent;
+    width: 100%;
+}
