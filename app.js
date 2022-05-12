@@ -36,9 +36,9 @@ function operate(a, operator, b) {
             return add(a,b)
         case '-':
             return subtract(a,b)
-        case '*':
+        case '×':
             return multiply(a,b)
-        case '/':
+        case '÷':
             if (b === 0) return null    
             else return divide(a,b)
         default:
@@ -49,65 +49,65 @@ function operate(a, operator, b) {
 // Actually evaluates the operations. Calls Operate() function and updates the values on the screen.
 function check() {
     if (operator === null || shouldResetScreen) return
-    if (operator === '/' && userInputScreen.textContent === '0') {
+    if (operator === '/' && resultScreen.textContent === '0') {
         alert("Divide by 0 error!")
         return
     }
-    b = userInputScreen.textContent
-    userInputScreen.textContent = roundNumber(
-        operate(operator, a, b)
+    b = resultScreen.textContent
+    resultScreen.textContent = roundNumber(
+        operate(a, operator, b)
     )
-    resultScreen.textContent = `${a} ${operator} ${b} =`
+    userInputScreen.textContent = `${a} ${operator} ${b} =`
     operator = null
     console.log(resultScreen.textContent);
 }
 
 function allClear() {
-    userInputScreen.textContent = '0'
-    resultScreen.textContent = ''
+    resultScreen.textContent = '0'
+    userInputScreen.textContent = ''
     a = ''
     b = ''
     operator = null
 }
 
 function clear() {
-    userInputScreen.textContent = '0'
-    resultScreen.textContent = ''
+    resultScreen.textContent = '0'
+    userInputScreen.textContent = ''
     a = ''
     b = ''
     operator = null
 }
 
 function backspace() {
-    userInputScreen.textContent = userInputScreen.textContent 
+    resultScreen.textContent = resultScreen.textContent 
     .toString() 
     .slice(0,-1);
 }
 
 function resetScreen() {
-    userInputScreen.textContent = ''
+    resultScreen.textContent = ''
     shouldResetScreen = false
 }
 
 function decimal() {
     if(shouldResetScreen) resetScreen()
-    if (userInputScreen.textContent === '')
-        userInputScreen.textContent = '0'
-    if (userInputScreen.textContent.includes('.')) return
-    userInputScreen.textContent += '.'
+    if (resultScreen.textContent === '')
+        resultScreen.textContent = '0'
+    if (resultScreen.textContent.includes('.')) return
+        resultScreen.textContent += '.'
 }
 
 function updateNumber(numkeyValue) {
-    if (userInputScreen.textContent === '0' || shouldResetScreen)
+    if (resultScreen.textContent === '0' || shouldResetScreen)
         resetScreen()
-    userInputScreen.textContent += numkeyValue
+    resultScreen.textContent += numkeyValue
 }
 
 function updateOperation(newOperator) {
     if (operator !== null) check()
-    a = userInputScreen.textContent
+    a = resultScreen.textContent
     operator = newOperator
-    resultScreen.textContent = `${a} ${operator}`
+    userInputScreen.textContent = `${a} ${operator}`
     shouldResetScreen = true
 }
 
