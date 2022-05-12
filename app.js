@@ -68,8 +68,17 @@ function backspace() {
     .slice(0,-1);
 }
 
-function decimal() {
+function resetScreen() {
+    userInputScreen.textContent = ''
+    shouldResetScreen = false
+}
 
+function decimal() {
+    if(shouldResetScreen) resetScreen()
+    if (userInputScreen.textContent === '')
+        userInputScreen.textContent = '0'
+    if (userInputScreen.textContent.includes('.')) return
+    userInputScreen.textContent += '.'
 }
 
 function updateNumber(numkeyValue) {
@@ -85,6 +94,10 @@ function updateOperation(newOperator) {
     operator = newOperator
     resultScreen.textContent = `${a} ${b}`
     shouldResetScreen = true
+}
+
+function roundNumber(number) {
+    return Math.round(number * 1000) / 1000
 }
 
 // This appends the requested number to the current user input
