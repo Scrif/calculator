@@ -24,7 +24,9 @@ clearBtn.addEventListener(click, clear)
 backspaceBtn.addEventListener(click, backspace)
 decimalBtn.addEventListener(click, decimal)
 
+// functions
 
+// This function runs the requested calculation
 function operate(a, operator, b) {
     a = Number(a);
     b = Number(b);
@@ -42,3 +44,8 @@ function operate(a, operator, b) {
             return null
     }
 };
+
+// This appends the requested number to the current user input
+numkeys.forEach((button) =>
+    button.addEventListener('click', () => appendNumber(button.textContent))
+)
