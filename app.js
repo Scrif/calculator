@@ -45,7 +45,40 @@ function operate(a, operator, b) {
     }
 };
 
+function allClear() {
+    userInputScreen.textContent = '0'
+    resultScreen.textContent = ''
+    a = ''
+    b = ''
+    operator = null
+}
+
+function clear() {
+    
+}
+
+function backspace() {
+
+}
+
+function decimal() {
+
+}
+
+function appendNumber() {
+
+}
+
+function updateOperation(newOperator) {
+
+}
+
 // This appends the requested number to the current user input
 numkeys.forEach((button) =>
     button.addEventListener('click', () => appendNumber(button.textContent))
+)
+
+// Updates the operator variable to the user-requested operator.
+operatorkeys.forEach((button) =>
+    button.addEventListener('click', () => updateOperation(button.textContent))
 )
