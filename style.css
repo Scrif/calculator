@@ -76,9 +76,22 @@ main {
     cursor: pointer;
 }
 
+button:hover {
+    transform: translateY(-0.2rem);
+}
+
 button.equals {
     grid-column: 3 / 5;
     border-radius: 2.5rem;
+}
+
+button.digits:active,
+button.operators:active,
+button.decimal:active,
+button.allclear:active,
+button.clear:active,
+button.equals:active {
+	transform: translateY(0rem);
 }
 
 .screen output {
