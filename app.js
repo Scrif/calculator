@@ -8,7 +8,22 @@ let b = ''
 let currentOperation = null
 
 const numkeys = document.querySelectorAll('[numkey]');
-const operatorkeys = document.querySelectorAll('[operatorkey]')
+const operatorkeys = document.querySelectorAll('[operatorkey]');
+const equalsBtn = document.getElementById('equals');
+const allClearBtn = document.getElementById('AC');
+const clearBtn = document.getElementById('clear');
+const backspaceBtn = document.getElementById('backspace');
+const decimalBtn = document.getElementById('decimal');
+const userInputScreen = document.getElementById('user-input');
+const resultScreen = document.getElementById('result');
+
+//event listeners
+equalsBtn.addEventListener(click, operate)
+allClearBtn.addEventListener(click, allClear)
+clearBtn.addEventListener(click, clear)
+backspaceBtn.addEventListener(click, backspace)
+decimalBtn.addEventListener(click, decimal)
+
 
 function operate(a, operator, b) {
     a = Number(a);
