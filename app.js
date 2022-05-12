@@ -3,6 +3,13 @@ const subtract = (a,b) => a - b;
 const multiply = (a,b) => a * b;
 const divide = (a,b) => a / b;
 
+let a = ''
+let b = ''
+let currentOperation = null
+
+const numkeys = document.querySelectorAll('[numkey]');
+const operatorkeys = document.querySelectorAll('[operatorkey]')
+
 function operate(a, operator, b) {
     a = Number(a);
     b = Number(b);
