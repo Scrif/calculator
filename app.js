@@ -46,6 +46,7 @@ function operate(a, operator, b) {
     }
 };
 
+// Actually evaluates the operations. Calls Operate() function and updates the values on the screen.
 function check() {
     if (operator === null || shouldResetScreen) return
     if (operator === '/' && userInputScreen.textContent === '0') {
@@ -58,6 +59,7 @@ function check() {
     )
     resultScreen.textContent = `${a} ${operator} ${b} =`
     operator = null
+    console.log(resultScreen.textContent);
 }
 
 function allClear() {
