@@ -1,10 +1,12 @@
 :root {
-    --lightGray: #f6f6f6;
-    --green: #0E8422;
-    --white: #ffffff;
-    --gold: #FFD700;
-    --darkYellow: #c0ad03;
-    --lightgreen: #20af0d;
+    --white: #f7f7f7;
+    --blue: #0275d8;
+    --darkYellow: #f0ad4e;
+    --lightGreen: #5cb85c;
+    --lightBlue: #5bc0de;
+    --red: #d9534f;
+    --darkGray: #292b2c;
+    --lightGray: #bbbcbd;
 }
 
 *, body {
@@ -33,7 +35,7 @@ main {
 }
 
 .calculator .screen-container {
-    background-color: var(--gold);
+    background-color: var(--blue);
     padding: 1rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
@@ -60,7 +62,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0.5rem;
     padding: 1rem;
-    background-color: var(--gold);
+    background-color: var(--blue);
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
 }
@@ -69,20 +71,40 @@ main {
     font-size: 1.3rem;
     padding: 1rem 0;
     font-weight: 500;
-    background: var(--darkYellow);
     border: 0px solid transparent;
-    border-radius: 100%;
+    border-radius: 25%;
     box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.5);
     cursor: pointer;
+}
+
+button.AC,
+button.clear,
+button.backspace {
+    background: var(--red);
+}
+
+button.numkey,
+button.decimal {
+    background: var(--lightBlue);
 }
 
 button:hover {
     transform: translateY(-0.2rem);
 }
 
+button.operatorkey:hover {
+    background: var(--red);
+}
+
+button.numkey:hover,
+button.decimal:hover {
+    background: var(--darkYellow);
+}
+
 button.equals {
     grid-column: 3 / 5;
-    border-radius: 2.5rem;
+    border-radius: 1rem;
+    background: var(--lightGreen);
 }
 
 button.digits:active,
