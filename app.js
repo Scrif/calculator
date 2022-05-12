@@ -5,7 +5,7 @@ const divide = (a,b) => a / b;
 
 let a = ''
 let b = ''
-let currentOperation = null
+let operator = null
 let shouldResetScreen = false
 
 const numkeys = document.querySelectorAll('[numkey]');
@@ -19,7 +19,7 @@ const userInputScreen = document.getElementById('user-input');
 const resultScreen = document.getElementById('result');
 
 //event listeners
-equalsBtn.addEventListener('click', operate)
+equalsBtn.addEventListener('click', check)
 allClearBtn.addEventListener('click', allClear)
 clearBtn.addEventListener('click', clear)
 backspaceBtn.addEventListener('click', backspace)
@@ -45,6 +45,20 @@ function operate(a, operator, b) {
             return null
     }
 };
+
+function check() {
+    if (operator === null || shouldResetScreen) return
+    if (operator === '/' && userInputScreen.textContent === '0') {
+        alert("Divide by 0 error!")
+        return
+    }
+    b = userInputScreen.textContent
+    userInputScreen.textContent = roundNumber(
+        operate(operator, a, b)
+    )
+    resultScreen.textContent = `${a} ${operator} ${b} =`
+    operator = null
+}
 
 function allClear() {
     userInputScreen.textContent = '0'
@@ -85,14 +99,13 @@ function updateNumber(numkeyValue) {
     if (userInputScreen.textContent === '0' || shouldResetScreen)
         resetScreen()
     userInputScreen.textContent += numkeyValue
-    console.log(numkeyValue);
 }
 
 function updateOperation(newOperator) {
-    if (operator !== null) operate()
+    if (operator !== null) check()
     a = userInputScreen.textContent
     operator = newOperator
-    resultScreen.textContent = `${a} ${b}`
+    resultScreen.textContent = `${a} ${operator}`
     shouldResetScreen = true
 }
 
