@@ -6,6 +6,7 @@ const divide = (a,b) => a / b;
 let a = ''
 let b = ''
 let currentOperation = null
+let shouldResetScreen = false
 
 const numkeys = document.querySelectorAll('[numkey]');
 const operatorkeys = document.querySelectorAll('[operatorkey]');
@@ -54,7 +55,8 @@ function allClear() {
 }
 
 function clear() {
-    
+    userInputScreen.textContent = '0'
+
 }
 
 function backspace() {
@@ -65,8 +67,9 @@ function decimal() {
 
 }
 
-function appendNumber() {
-
+function updateNumber() {
+    if (userInputScreen.textContent === '0' || shouldResetScreen)
+        resetScreen()
 }
 
 function updateOperation(newOperator) {
@@ -75,7 +78,7 @@ function updateOperation(newOperator) {
 
 // This appends the requested number to the current user input
 numkeys.forEach((button) =>
-    button.addEventListener('click', () => appendNumber(button.textContent))
+    button.addEventListener('click', () => updateNumber(button.textContent))
 )
 
 // Updates the operator variable to the user-requested operator.

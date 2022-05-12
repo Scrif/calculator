@@ -105,11 +105,12 @@ button.equals {
     background: var(--lightGreen);
 }
 
-button.digits:active,
-button.operators:active,
+button.numkey:active,
+button.operatorkey:active,
 button.decimal:active,
-button.allclear:active,
+button.AC:active,
 button.clear:active,
+button.backspace:active,
 button.equals:active {
 	transform: translateY(0rem);
 }
