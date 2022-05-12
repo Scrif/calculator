@@ -59,7 +59,6 @@ function check() {
     )
     userInputScreen.textContent = `${a} ${operator} ${b} =`
     operator = null
-    console.log(resultScreen.textContent);
 }
 
 function allClear() {
